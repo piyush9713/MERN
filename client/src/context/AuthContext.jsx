@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const { data } = await API.post("/users/register", userData);
       toast.success(data?.message || "User Registered Successfully!");
-      return data?.newUser;
+      return data?.user;
     } catch (error) {
       return null;
     }

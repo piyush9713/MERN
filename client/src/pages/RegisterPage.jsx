@@ -8,8 +8,8 @@ const RegisterPage = () => {
   const { handleSubmit, register, reset } = useForm();
 
   const onSubmit = async (data) => {
-    const newUser = await registerUser(data);
-    if (newUser) {
+    const user = await registerUser(data);
+    if (user) {
       reset();
       navigate("/login");
     }
