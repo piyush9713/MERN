@@ -19,8 +19,8 @@ export const AuthProvider = ({ children }) => {
   const getUser = useCallback(async () => {
     try {
       const { data } = await API.get("/users/get-user", { silent: true });
-      setUser(data.user);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      setUser(data?.user);
+      localStorage.setItem("user", JSON.stringify(data?.user));
     } catch {
       logoutUser();
     }
@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const { data } = await API.post("/users/login", userData);
       setUser(data?.user);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("user", JSON.stringify(data?.user));
       toast.success(data?.message || "Login successful!");
       return data?.user;
     } catch (error) {

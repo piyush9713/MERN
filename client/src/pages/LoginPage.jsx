@@ -24,20 +24,16 @@ const LoginPage = () => {
         <input
           type="email"
           placeholder="Email"
-          required
-          {...register("email")}
+          {...register("email", { required: true })}
         />
 
         <input
           type="password"
           placeholder="Password"
-          required
-          {...register("password")}
+          {...register("password", { required: true })}
         />
 
-        <button type="submit" className="border p-2 bg-blue-400">
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
