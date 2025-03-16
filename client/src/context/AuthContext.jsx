@@ -18,9 +18,11 @@ export const AuthProvider = ({ children }) => {
 
   const getUser = useCallback(async () => {
     try {
-      const { data } = await API.get("/users/get-user", { silent: true });
-      setUser(data?.user);
-      localStorage.setItem("user", JSON.stringify(data?.user));
+      if (user) {
+        const { data } = await API.get("/users/get-user", { silent: true });
+        setUser(data?.user);
+        localStorage.setItem("user", JSON.stringify(data?.user));
+      }
     } catch {
       logoutUser();
     }
