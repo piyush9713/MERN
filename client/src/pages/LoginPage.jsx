@@ -34,6 +34,9 @@ const LoginPage = () => {
         />
 
         <button type="submit">Submit</button>
+        <button onClick={() => navigate("/register")}>
+          Don't have an account? Register
+        </button>
       </form>
     </div>
   );

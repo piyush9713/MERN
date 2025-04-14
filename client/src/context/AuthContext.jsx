@@ -6,8 +6,8 @@ import {
   useEffect,
   useCallback,
 } from "react";
-import API from "../utils/axios";
 import { toast } from "sonner";
+import API from "../api/axiosConfig";
 
 export const AuthContext = createContext();
 

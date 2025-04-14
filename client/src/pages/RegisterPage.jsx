@@ -39,6 +39,9 @@ const RegisterPage = () => {
           {...register("password", { required: true })}
         />
         <button type="submit">Submit</button>
+        <button onClick={() => navigate("/login")}>
+          Already have an account? Login
+        </button>
       </form>
     </div>
   );
